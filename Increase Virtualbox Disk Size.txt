@@ -1,0 +1,14 @@
+How To Increase Virtualbox Disk Size For Dynamically Allocated Disks
+https://www.linuxbabe.com/virtualbox/how-to-increase-virtualbox-disk-size-for-dynamically-allocated-disks
+https://gparted.org/livecd.php
+D:\Git\Ggg\Ggg.VirtualBox\Ggg.VirtualBox.Core.ps1
+//=============================================================================
+First, right click on the location line and copy the location of your virtual hard disk.
+D:\Programs2\VirtualBox\Ubuntu-2-5-2018\Ubuntu.vdi
+//=============================================================================
+Now you can use the vboxmanage comand to enlarge your virtual disk. The syntax is as follows:
+vboxmanage modifyhd /location-of-your-virtual-disk --resize size-in-MB
+//=============================================================================
+Specify the new size in Megabytes.  For instance, I entered the following command to increase my virtual disk to 10GB.
+vboxmanage modifyhd "/home/matrix/VirtualBox VMs/ubuntu/ubuntu.vdi" --resize 10240
+//=============================================================================
