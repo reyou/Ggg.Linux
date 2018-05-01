@@ -1,0 +1,225 @@
+- What's the difference betwen the single dash and double dash flags on shell commands?
+
+
+A single hyphen can be followed by multiple single-character flags. A double hyphen prefixes a single, multicharacter option.
+
+Consider this example:
+
+tar -czf
+
+In this example, -czf specifies three single-character flags: c, z, and f.
+
+Now consider another example:
+
+tar --exclude
+
+In this case, --exclude specifies a single, multicharacter option named exclude. The double hyphen disambiguates the command-line argument, ensuring that tar interprets it as exclude rather than a combination of e, x, c, l, u, d, and e.
+
+- run command as root user
+sudo ./VBoxLinuxAdditions.run
+
+- install unity-tweak-tool
+sudo apt-get install unity-tweak-tool
+
+- install bluefish
+sudo apt-get install bluefish
+
+- sudo dpkg -i ./google-chrome-stable_current_amd64.deb => install downloaded .deb package
+root@aozdemir-ubuntu:/home/aozdemir/Downloads# sudo dpkg -i ./google-chrome-stable_current_amd64.deb 
+
+- sudo apt-get upgrade => upgrade downloaded packages.
+Reading package lists... Done
+
+- apt-get update => Retrieve new lists of packages.
+
+- apt-get check => Verify that there are no broken dependencies.
+
+- apt-get -f install => fetch missing package dependencies.
+
+- uninstall/remove bluefish
+sudo apt-get install bluefish
+
+- apt-cache search bluefish* => search for an app.
+bluefish - advanced Gtk+ text editor for web and software development
+bluefish-data - advanced Gtk+ text editor (data)
+bluefish-dbg - advanced Gtk+ text editor (debugging symbols)
+bluefish-plugins - advanced Gtk+ text editor (plugins)
+winefish - LaTeX Editor based on Bluefish
+
+- apt-cache policy gimp => get app info.
+gimp:
+  Installed: (none)
+  Candidate: 2.8.16-1ubuntu1.1
+  Version table:
+     2.8.16-1ubuntu1.1 500
+
+- installing a theme:
+sudo add-apt-repository ppa:ravefinity-project/ppa
+sudo apt-get update
+sudo apt-get install vibrancy-colors 
+
+- get current folder
+pwd
+
+- change directory relative path
+cd Downloads
+cd ./Downloads
+
+- change directory absolute path
+cd /usr/
+
+- go to parent directory
+cd ..
+
+- go to root
+cd ~
+
+- go to root with path
+cd ~/Documents/
+
+- clear screen
+clear
+
+- list all content in directory
+ls
+Desktop    Downloads         Music     Public     Videos
+Documents  examples.desktop  Pictures  Templates
+
+- list all with extensions
+ls -p
+Desktop/    Downloads/        Music/     Public/     Videos/
+Documents/  examples.desktop  Pictures/  Templates/
+
+- list all content detailed
+ls -l
+total 44
+drwxr-xr-x 2 aozdemir aozdemir 4096 Jun 30 00:30 Desktop
+drwxr-xr-x 3 aozdemir aozdemir 4096 Jun 30 00:44 Documents
+drwxr-xr-x 4 aozdemir aozdemir 4096 Jun 30 23:19 Downloads
+-rw-r--r-- 1 aozdemir aozdemir 8980 Jun 30 00:26 examples.desktop
+drwxr-xr-x 2 aozdemir aozdemir 4096 Jun 30 00:30 Music
+drwxr-xr-x 3 aozdemir aozdemir 4096 Jun 30 23:06 Pictures
+drwxr-xr-x 2 aozdemir aozdemir 4096 Jun 30 00:30 Public
+drwxr-xr-x 2 aozdemir aozdemir 4096 Jun 30 00:30 Templates
+drwxr-xr-x 2 aozdemir aozdemir 4096 Jun 30 00:30 Videos
+
+- list all content reversed order 
+ls -r
+Videos     Public    Music             Downloads  Desktop
+Templates  Pictures  examples.desktop  Documents
+
+- list content with file size
+ls -s
+total 44
+ 4 Desktop     4 Downloads          4 Music      4 Public      4 Videos
+ 4 Documents  12 examples.desktop   4 Pictures   4 Templates
+
+- list content in target directory
+ls ./Downloads
+alien-wallpaper.jpg     masalla-icon-theme_1.0
+Candra-Theme-3.20-Dark  masalla-icon-theme_1.0.tar.xz
+gitkraken-amd64.deb     osx-arc-collection_1.4.3_amd64.deb
+
+- list content in target directory reversed order
+ls ./Downloads -r
+osx-arc-collection_1.4.3_amd64.deb  gitkraken-amd64.deb
+masalla-icon-theme_1.0.tar.xz       Candra-Theme-3.20-Dark
+masalla-icon-theme_1.0              alien-wallpaper.jpg
+
+- get help for any command --help
+ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+
+- open file in internal terminal text editor 
+sudo nano ./testfile.txt
+
+- to save file in nano CTRL+SHIFT+X
+
+- sudo nano file.txt => will create new file named file.txt
+
+- sudo !! => will repeat last command.
+
+- sudo su => will switch to root user.
+aozdemir@aozdemir-ubuntu:~/Documents/ggg/gamegogo/Ggg.Linux/sandbox$ sudo su
+root@aozdemir-ubuntu:/home/aozdemir/Documents/ggg/gamegogo/Ggg.Linux/sandbox#
+
+- su aozdemir => will switch from root to my user account "aozdemir"
+root@aozdemir-ubuntu:/home/aozdemir/Documents/ggg/gamegogo/Ggg.Linux/sandbox# su aozdemir
+aozdemir@aozdemir-ubuntu:~/Documents/ggg/gamegogo/Ggg.Linux/sandbox$
+
+- chown => means change ownership.
+
+- sudo chown root:aozdemir file.txt => file permission for user aozdemir.
+root@aozdemir-ubuntu:/home/aozdemir/Documents/ggg/gamegogo/Ggg.Linux/sandbox# sudo chown root:aozdemir file.txt
+root@aozdemir-ubuntu:/home/aozdemir/Documents/ggg/gamegogo/Ggg.Linux/sandbox# ls -ltotal 16
+-rw-r--r-- 1 root     aozdemir  11 Jul  1 14:15 file.txt
+-rw-rw-r-- 1 aozdemir aozdemir 154 Jul  1 12:52 testfile.txt
+
+- sudo chown aozdemir:aozdemir file.txt => file permission for user aozdemir.
+
+- chown -R aozdemir:aozdemir ./mydir/ => change ownership of a folder and all content (recursive)
+
+- ls -l ./mydir/ => check ownership in sub directory.
+total 8
+-rw-r--r-- 1 aozdemir aozdemir  8 Jul  1 14:26 file2.txt
+-rw-r--r-- 1 aozdemir aozdemir 33 Jul  1 14:25 file.txt
+
+- chmod => change permissions on a file.
+
+- sudo chmod 664 file.txt => read/write permission over file.
+root@aozdemir-ubuntu:/home/aozdemir/Documents/ggg/gamegogo/Ggg.Linux/sandbox# sudo chmod 664 file.txt
+root@aozdemir-ubuntu:/home/aozdemir/Documents/ggg/gamegogo/Ggg.Linux/sandbox# ls -ltotal 16
+-rw-rw-r-- 1 root     aozdemir  36 Jul  1 14:19 file.txt
+-rw-rw-r-- 1 aozdemir aozdemir 154 Jul  1 12:52 testfile.txt
+
+- rm file.txt => remove file.
+
+- mkdir => create directory.
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
