@@ -30,7 +30,7 @@ Configuration options and syntax is detailed in apt.conf(5).
 Information about how to configure sources can be found in sources.list(5).
 Package and version choices can be expressed via apt_preferences(5).
 Security details are available in apt-secure(8).
-                                        This APT has Super Cow Powers.
+This APT has Super Cow Powers.
 
 //=============================================================================
 What is the difference between apt-get update and upgrade?

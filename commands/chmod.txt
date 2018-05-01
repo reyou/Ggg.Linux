@@ -1,0 +1,95 @@
+https://en.wikipedia.org/wiki/Chmod
+
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+  -c, --changes          like verbose but report only when a change is made
+  -f, --silent, --quiet  suppress most error messages
+  -v, --verbose          output a diagnostic for every file processed
+      --no-preserve-root  do not treat '/' specially (the default)
+      --preserve-root    fail to operate recursively on '/'
+      --reference=RFILE  use RFILE's mode instead of MODE values
+  -R, --recursive        change files and directories recursively
+      --help     display this help and exit
+      --version  output version information and exit
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/chmod>
+or available locally via: info '(coreutils) chmod invocation'
+
+//=============================================================================
+
+Numerical permissions
+#	Permission	rwx
+7	read, write and execute	rwx
+6	read and write	rw-
+5	read and execute	r-x
+4	read only	r--
+3	write and execute	-wx
+2	write only	-w-
+1	execute only	--x
+0	none	---
+
+//=============================================================================
+
+The references (or classes) are used to distinguish the users to whom the permissions apply. If no references are specified it defaults to “all” but modifies only the permissions allowed by the umask. The references are represented by one or more of the following letters:
+
+Reference	Class	Description
+u	owner	file's owner
+g	group	users who are members of the file's group
+o	others	users who are neither the file's owner nor members of the file's group
+a	all	all three of the above, same as ugo
+
+//=============================================================================
+
+The chmod program uses an operator to specify how the modes of a file should be adjusted. The following operators are accepted:
+
+Operator	Description
++	adds the specified modes to the specified classes
+-	removes the specified modes from the specified classes
+=	the modes specified are to be made the exact modes for the specified classes
+
+//=============================================================================
+
+The modes indicate which permissions are to be granted or removed from the specified classes. There are three basic modes which correspond to the basic permissions:
+
+Mode	Name	Description
+r	read	read a file or list a directory's contents
+w	write	write to a file or directory
+x	execute	execute a file or recurse a directory tree
+X	special execute	which is not a permission in itself but rather can be used instead of x. It applies execute permissions to directories regardless of their current permissions and applies execute permissions to a file which already has at least one execute permission bit already set (either owner, group or other). It is only really useful when used with '+' and usually in combination with the -R option for giving group or other access to a big directory tree without setting execute permission on normal files (such as text files), which would normally happen if you just used "chmod -R a+rx .", whereas with 'X' you can do "chmod -R a+rX ." instead
+s	setuid/gid	details in Special modes section
+t	sticky	details in Special modes section
+
+//=============================================================================
+
+Note that to make a file executable, you must set the eXecutable bit, and for a 
+shell script, the Readable bit must also be set:
+$ chmod a+rx my-script.sh
+
+//=============================================================================
+
+To view the file mode, the ls or stat commands may be used:
+
+$ ls -l findPhoneNumbers.sh
+-rwxr-xr--  1 dgerman  staff  823 Dec 16 15:03 findPhoneNumbers.sh
+$ stat -c %a findPhoneNumbers.sh
+754
+
+//=============================================================================
+
+Numeric example
+In order to permit all users who are members of the programmers group to update a file
+
+$ ls -l sharedFile
+-rw-r--r--  1 jsmith programmers 57 Jul  3 10:13  sharedFile
+$ chmod 664 sharedFile
+$ ls -l sharedFile
+-rw-rw-r--  1 jsmith programmers 57 Jul  3 10:13  sharedFile
+
+//=============================================================================
