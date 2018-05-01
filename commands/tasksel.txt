@@ -1,0 +1,24 @@
+/**you can view a list of available tasks by entering the following from
+ a terminal prompt: */
+sudo apt install tasksel
+
+Usage:
+tasksel install <task>...
+tasksel remove <task>...
+tasksel [options]
+	-t, --test          test mode; don't really do anything
+	    --new-install   automatically install some tasks
+	    --list-tasks    list tasks that would be displayed and exit
+	    --task-packages list available packages in a task
+	    --task-desc     returns the description of a task
+
+//=============================================================================
+If you did not install one of the tasks during the installation process,
+but for example you decide to make your new LAMP server a DNS server as well,
+simply insert the installation media and from a terminal: 
+$ sudo tasksel install dns-server
+//=============================================================================
+to list the packages installed with the DNS Server task enter the
+following: 
+$ tasksel --task-packages dns-server
+//=============================================================================
