@@ -24,4 +24,10 @@ Information about how to configure sources can be found in sources.list(5).
 Package and version choices can be expressed via apt_preferences(5).
 Security details are available in apt-secure(8).
 
+//=============================================================================
+// sort by keyword
+apt-cache search {keyword} |sort -d |less
+// sort all
+apt-cache search . |sort -d |less
+//=============================================================================
 

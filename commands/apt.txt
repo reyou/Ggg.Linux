@@ -1,3 +1,6 @@
+How do I search for available packages from the command-line?
+https://askubuntu.com/questions/160897/how-do-i-search-for-available-packages-from-the-command-line
+
 apt 1.2.24 (amd64)
 Usage: apt [options] command
 
@@ -25,3 +28,8 @@ Information about how to configure sources can be found in sources.list(5).
 Package and version choices can be expressed via apt_preferences(5).
 Security details are available in apt-secure(8).
                                         This APT has Super Cow Powers.
+//=============================================================================
+https://askubuntu.com/questions/17823/how-to-list-all-installed-packages
+How to list all installed packages
+apt list --installed
+//=============================================================================
