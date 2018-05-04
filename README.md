@@ -1,10 +1,12 @@
 # Ggg.Linux
 Linux OS practices. Linux is a family of free and open-source software operating systems built around the Linux kernel. 
 
-Synaptic Package Manager
-Install, remove and upgrade software packages
+Synaptic Package Manager  
+Install, remove and upgrade software packages  
+https://help.ubuntu.com/community/SynapticHowto
 
-http://www.ubuntugeek.com/linux-or-ubuntu-directory-structure.html
+### Ubuntu Directory Structure
+http://www.ubuntugeek.com/linux-or-ubuntu-directory-structure.html  
 In the Linux operating system, all filesystems are contained within one directory hierarchy. 
 The root directory is the top level directory, and all its subdirectories make up the 
 directory hierarchy. This differs to other operating systems such as MS-Windows which 
