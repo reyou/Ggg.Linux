@@ -1,0 +1,28 @@
+There are several ways to upgrade from one Ubuntu release to another. 
+This section gives an overview of the recommended upgrade method.
+
+Debian based systems can also be upgraded by using apt dist-upgrade. 
+However, using do-release-upgrade is recommended because it has the 
+ability to handle system configuration changes sometimes needed between
+releases.
+
+Usage: do-release-upgrade [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -V, --version         Show version and exit
+  -d, --devel-release   If using the latest supported release, upgrade to the
+                        development release
+  --data-dir=DATA_DIR   Directory that contains the data files
+  -p, --proposed        Try upgrading to the latest release using the upgrader
+                        from $distro-proposed
+  -m MODE, --mode=MODE  Run in a special upgrade mode. Currently 'desktop' for
+                        regular upgrades of a desktop system and 'server' for
+                        server systems are supported.
+  -f FRONTEND, --frontend=FRONTEND
+                        Run the specified frontend
+  -s, --sandbox         Test upgrade with a sandbox aufs overlay
+  -c, --check-dist-upgrade-only
+                        Check only if a new distribution release is available
+                        and report the result via the exit code
+  -q, --quiet           
