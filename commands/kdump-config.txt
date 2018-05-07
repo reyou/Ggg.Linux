@@ -1,0 +1,27 @@
+Usage:
+kdump-config {help|test|show|status|load|unload|savecore|propagate|symlinks kernel-version}"
+  help      - print this page
+  test      - Do a dry-run of kdump kernel load command by showing
+              the kernels and parameters that will be used and echo'ing
+              the kexec command. The kexec command will not be executed.
+              If using fadump, check if required sysfs directories exist.
+  show      - Show dump mode, status, any current parameters.
+              Show kexec command for kdump.
+  status    - evaluate /sys/kernel/{kexec_crash_loaded,fadump_registered}
+              depending on dump mode. Print appropriate message
+  load      - Locate the kdump kernel, debug kernel, and establish links for
+              makedumpfile.  Then load the kdump kernel using kexec
+              If using fadump, register.
+  unload    - unload the kdump kernel using kexec
+              If using fadump, unregister.
+  savecore  - use previously made links to save /proc/vmcore
+  propagate - Send public ssh key to remote host for passwordless connection
+  symlinks  - Verify and create vmlinuz and initrd.img links in /var/lib/kdump
+              according to the provided kernel version. If the target
+              initrd.img file is absent, it will create it.
+
+//=============================================================================              
+Finally, as seen previously, the 
+$ kdump-config show 
+command displays the current status of the kdump-tools configuration :
+//=============================================================================

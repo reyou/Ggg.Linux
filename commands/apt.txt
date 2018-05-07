@@ -33,3 +33,8 @@ https://askubuntu.com/questions/17823/how-to-list-all-installed-packages
 How to list all installed packages
 apt list --installed
 //=============================================================================
+apt search gitkraken
+apt show gitkraken
+apt list --upgradable
+apt list --upgradable | grep server
+//=============================================================================

@@ -13,3 +13,12 @@ Usage: dpkg-reconfigure [options] packages
   -f,  --frontend               Specify debconf frontend to use.
   -p,  --priority               Specify minimum priority question to show.
        --terse                  Enable terse mode.
+
+//=============================================================================
+Examples:
+If you ever need to manually enable the functionality, you can use the 
+$ dpkg-reconfigure kdump-tools
+command and answer Yes to the question. You can also edit /etc/default/kdump-tools by including the
+following line:
+USE_KDUMP=1
+//=============================================================================
