@@ -1,3 +1,7 @@
+dpkg is a package manager for Debian-based systems. It can install, remove, 
+and build packages, but unlike other package management systems, it cannot 
+automatically download and install packages or their dependencies. 
+
 https://askubuntu.com/questions/9024/where-are-my-installed-applications
 You can discover where a package puts its 'stuff' by running:
 
@@ -88,3 +92,7 @@ Comparison operators for --compare-versions are:
   < << <= = >= >> >       (only for compatibility with control file syntax).
 
 Use 'apt' or 'aptitude' for user-friendly package management.
+
+//=============================================================================
+dpkg -l | grep apache2
+//=============================================================================
