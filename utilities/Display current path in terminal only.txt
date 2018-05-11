@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/17795546/display-current-path-in-terminal-only
+pwd

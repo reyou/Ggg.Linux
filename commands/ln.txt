@@ -3,9 +3,12 @@ I've found this is often a misnaming error, if you install from a package
 manager you bin may be called nodejs so you just need to symlink it like 
 so 
 $ ln -s /usr/bin/nodejs /usr/bin/node
-
-
-
+//============================================================================
+https://askubuntu.com/questions/214643/help-with-creating-a-symbolic-link
+ln -s <real folder> <link folder>
+ln -s /usr/share/applications /home/aozdemir/Desktop/applications2
+rm -R /home/aozdemir/Desktop/applications
+//============================================================================
 Usage: ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
   or:  ln [OPTION]... TARGET                  (2nd form)
   or:  ln [OPTION]... TARGET... DIRECTORY     (3rd form)
