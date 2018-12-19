@@ -1,0 +1,1 @@
+$ bash /home/aozdemir/Documents/Ggg.Linux/app/app-web/ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php/nestedIfStatements/nested_if.sh 150
