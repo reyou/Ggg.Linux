@@ -1,0 +1,1 @@
+$ bash /home/aozdemir/Documents/Ggg.Linux/app/app-web/ryanstutorials.net/bash-scripting-tutorial/bash-arithmetic.php/lengthOfAVariable/length_example.sh

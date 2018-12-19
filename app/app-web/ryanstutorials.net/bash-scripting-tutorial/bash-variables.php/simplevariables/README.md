@@ -1,0 +1,1 @@
+$ bash /home/aozdemir/Documents/Ggg.Linux/app/app-web/ryanstutorials.net/bash-scripting-tutorial/bash-variables.php/simplevariables/simplevariables.sh
